@@ -14,7 +14,9 @@ Instructions for how to install and run NVidia's COSMOS model on ARC HPC systems
     ```
 2) Load dependencies & create mamba environment
     ```
-    module load gcc cuda/12.6 cudnn/12.6 
-    source /sw/pkgs/arc/mamba/py3.11/etc/profile.d/conda.shmamba/py3.11
+    module load gcc cuda/12.6 cudnn/12.6 mamba/py3.11
+    source /sw/pkgs/arc/mamba/py3.11/etc/profile.d/conda.sh
     mamba env create -f cosmos.yml
- 
+    ```
+> [!WARNING]
+> If CUDA dependent build errors occur with `mamba env create -f cosmos.yml`, then try running that command from within a GPU compute node.
